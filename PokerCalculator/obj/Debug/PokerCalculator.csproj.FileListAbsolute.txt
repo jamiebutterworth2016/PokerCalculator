@@ -1,0 +1,8 @@
+C:\SourceCode\PokerCalculator\PokerCalculator\bin\Debug\PokerCalculator.exe.config
+C:\SourceCode\PokerCalculator\PokerCalculator\bin\Debug\PokerCalculator.exe
+C:\SourceCode\PokerCalculator\PokerCalculator\bin\Debug\PokerCalculator.pdb
+C:\SourceCode\PokerCalculator\PokerCalculator\obj\Debug\PokerCalculator.csprojResolveAssemblyReference.cache
+C:\SourceCode\PokerCalculator\PokerCalculator\obj\Debug\PokerCalculator.exe
+C:\SourceCode\PokerCalculator\PokerCalculator\obj\Debug\PokerCalculator.pdb
+C:\SourceCode\PokerCalculator\PokerCalculator\bin\Debug\SimpleInjector.dll
+C:\SourceCode\PokerCalculator\PokerCalculator\bin\Debug\SimpleInjector.xml
