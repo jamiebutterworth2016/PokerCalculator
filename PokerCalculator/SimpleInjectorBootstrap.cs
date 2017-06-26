@@ -6,7 +6,10 @@ namespace PokerCalculator
     {
         public static void Start(Container container)
         {
-            container.Register<ICardConstructor, CardConstructor>();
+            container.Register<ICacher, Cacher>();
+
+            container.Register<ICardRetriever, CardRetriever>();
+
             container.Verify();
         }
     }

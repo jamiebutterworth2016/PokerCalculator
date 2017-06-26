@@ -9,29 +9,36 @@ namespace PokerCalculator
 {
     static class Program
     {
-        private static readonly ICardConstructor _cardConstructor;
+        private static readonly ICacher _cacher;
+        private static readonly ICardRetriever _cardRetriever;
 
         static Program()
         {
             var container = new Container();
             SimpleInjectorBootstrap.Start(container);
-            _cardConstructor = container.GetInstance<ICardConstructor>();
+            _cacher = container.GetInstance<ICacher>();
+            _cardRetriever = container.GetInstance<ICardRetriever>();
         }
 
         static void Main(string[] args)
         {
+            _cacher.CacheDeck();
 
             Console.WriteLine("Enter your first hole card:");
-
             var inputtedFirstHoleCard = Console.ReadLine();
 
-            Console.WriteLine("Enter your second hole card:");
+            var firstHoleCard = _cardRetriever.RetrieveCard(inputtedFirstHoleCard);
 
+            _cacher.RemoveCard(firstHoleCard);
+            
+            Console.WriteLine("Enter your second hole card:");
             var inputtedSecondHoleCard = Console.ReadLine();
 
-            var firstHoleCard = _cardConstructor.ConstructCard(inputtedFirstHoleCard);
+            var secondHoleCard = _cardRetriever.RetrieveCard(inputtedSecondHoleCard);
 
-            var secondHoleCard = _cardConstructor.ConstructCard(inputtedSecondHoleCard);
+            _cacher.RemoveCard(secondHoleCard);
+
+            _cacher.Dispose();
         }
     }
 }
